@@ -6,8 +6,8 @@ const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
 
 const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+  { path: '/foo', component: Foo, name:'foo' },
+  { path: '/bar', component: Bar, name:'bar' }
 ]
 
 const router = new VueRouter({
@@ -28,5 +28,6 @@ Vue.use(VueAnalytics,{
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')
