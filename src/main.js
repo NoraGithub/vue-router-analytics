@@ -2,12 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+const Foo = () => import('./foo')
+const HelloWorld = () => import('./components/HelloWorld')
 
 const routes = [
   { path: '/foo', component: Foo, name:'foo' },
-  { path: '/bar', component: Bar, name:'bar' }
+  { path: '/', component: HelloWorld, name:'HelloWorld' },
 ]
 
 const router = new VueRouter({
